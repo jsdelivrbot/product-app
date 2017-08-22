@@ -18,7 +18,7 @@ class FormComponent extends Component {
     getValidationState() {
         const length = this.state.value.length;
         if(!length) return;
-        if (length > 4 && length < 9 && /^[a-zа-яё\d]{1}[a-zа-яё\d\s]*[a-zа-яё\d]{1}$/i.test(this.state.value)) {
+        if (length > 3 && length < 9 && /^[a-zа-яё\d]{1}[a-zа-яё\d\s]*[a-zа-яё\d]{1}$/i.test(this.state.value)) {
             return 'success'
         } else {
             return 'warning'
@@ -27,7 +27,7 @@ class FormComponent extends Component {
 
     handleChange(e) {
         const value = e.target.value;
-        if (value.length > 4 && value.length < 9 && /^[a-zа-яё\d]{1}[a-zа-яё\d\s]*[a-zа-яё\d]{1}$/i.test(value)) {
+        if (value.length > 3 && value.length < 9 && /^[a-zа-яё\d]{1}[a-zа-яё\d\s]*[a-zа-яё\d]{1}$/i.test(value)) {
             this.setState({ value: value, isValid: true});
         } else {
             this.setState({ value: value, isValid: false });
